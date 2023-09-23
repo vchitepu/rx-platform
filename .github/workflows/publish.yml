@@ -18,6 +18,6 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          command: |
+          script: |
             git -C $DIR pull
             touch $DIR/uwsgi.ini

@@ -10,14 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: remotely pull and reload Flask
-        uses: appleboy/ssh-action@v1.0.0
+        uses: fifsky/ssh-action@master
         env:
           DIR: ${{ secrets.DIR }}
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
+          user: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
+          command: |
             git -C $DIR pull
             touch $DIR/uwsgi.ini

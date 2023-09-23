@@ -14,7 +14,7 @@ jobs:
         with:
           host: ${{secrets.HOST}}
           user: ${{secrets.USER}}
-          password: ${{secrets.PASSWORD}}
+          pass: ${{secrets.PASSWORD}}
           command: |
             git -C /var/www/rx-platform pull origin/master
             touch /var/www/rx-platform/uwsgi.ini

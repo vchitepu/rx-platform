@@ -15,7 +15,7 @@ jobs:
           DIR: ${{ secrets.DIR }}
         with:
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.USER }}
+          username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           command: |

@@ -1,0 +1,20 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  reload_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: remotely pull and reload Flask
+        uses: fifsky/ssh-action@master
+        with:
+          host: ${{secrets.HOST}}
+          user: ${{secrets.USER}}
+          password: ${{secrets.PASSWORD}}
+          command: |
+            git -C /var/www/rx-platform pull origin/master
+            touch /var/www/rx-platform/uwsgi.ini

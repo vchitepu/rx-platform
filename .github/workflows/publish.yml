@@ -15,7 +15,7 @@ jobs:
           DIR: ${{ secrets.DIR }}
         with:
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.USER }}
+          user: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           command: |
             git -C $DIR pull

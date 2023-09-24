@@ -11,12 +11,10 @@ jobs:
     steps:
       - name: remotely pull and reload Flask
         uses: fifsky/ssh-action@master
-        env:
-          DIR: ${{ secrets.DIR }}
         with:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           command: |
-            git -C $DIR pull
-            touch $DIR/uwsgi.ini
+            git -C /var/www/rx-platform pull
+            touch /var/www/rx-platform/uwsgi.ini
